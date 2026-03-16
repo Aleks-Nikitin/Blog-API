@@ -2,6 +2,7 @@ import express from "express";
 import 'dotenv/config';
 import userRouter from "./routes/userRouter.js";
 const app = express();
+app.use(express.urlencoded({extended:true}))
 app.use("/users",userRouter);
 app.listen(process.env.PORT,"localhost",(err)=>{
     if(err){

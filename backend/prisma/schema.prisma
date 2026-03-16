@@ -19,7 +19,7 @@ model User {
   password String
   posts Post[]
   comments Comment[]
-  author Boolean
+ // author Boolean
 }
 model Post {
   id Int @id @default(autoincrement())
