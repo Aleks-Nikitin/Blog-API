@@ -1,6 +1,5 @@
 import { prisma } from '../lib/prisma.js';
 import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
 import {body,matchedData,validationResult} from "express-validator";
 const lengthErr= "length must be more than 1";
 const emailErr= "Not a valid email";
@@ -33,48 +32,18 @@ async function getUser(req,res){
     })
     res.json({user:user})
 }
-async function verifyLogin(req,res,next){
-    const {email}=req.body;
-    const user = await prisma.user.findUnique({
+
+/*async function updateUser(req,res) {
+    const {user}=req.user
+    await prisma.user.update({
         where:{
-            email:email
+            id:user.id
+        }
+        data:{
+
         }
     })
-    if(!user){
-        return res.json({msg:"Incorrect email"})
-    }
-    const match =await bcrypt.compare(req.body.password,user.password);
-    if(!match){
-        return res.json({msg:"Incorrect password"})
-    }
-    jwt.sign({userId:user.id,iat:Date.now()},process.env.SECRET_KEY,{expiresIn:"7d"},(err,token)=>{
-        if(err){
-            throw new Error
-        }
-       return res.json({token:token});
-    })
-
-}
-async function verifyToken(req,res,next){
-    const bearerHeader=req.headers["authorization"];
-    if(typeof bearerHeader=="undefined" ){
-       return res.status(401).json({
-            msg:"access token required"
-        })
-    }
-    const bearer= bearerHeader.split(" ");
-    const bearerToken =bearer[1];
-    req.token=bearerToken;
-    try{
-        jwt.verify(bearerToken,process.env.SECRET_KEY);
-        return next()
-    }catch(error){
-        return res.status(403).json({
-            msg:"Invalid token"
-        });
-    }
-
-}
+}*/
 const createUser = [validateUser,async function (req,res){
     const errors= validationResult(req);
     if(!errors.isEmpty()){
@@ -99,6 +68,4 @@ export default{
     getUsers,
     getUser,
     createUser,
-    verifyLogin,
-    verifyToken
 }
