@@ -41,7 +41,7 @@ function CommentSection({ postId, postAuthorId }) {
   const [posting, setPosting] = useState(false)
   const [deletingId, setDeletingId] = useState(null)
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
+  const API_BASE_URL = 'https://blog-api-production-43f2.up.railway.app/'
 
   useEffect(() => subscribeAuth(() => setToken(getToken())), [])
 

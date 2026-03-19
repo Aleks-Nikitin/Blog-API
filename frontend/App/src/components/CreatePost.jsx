@@ -14,7 +14,7 @@ function CreatePost() {
   const [errorMsg, setErrorMsg] = useState(null)
   const [loading, setLoading] = useState(false)
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
+  const API_BASE_URL = 'https://blog-api-production-43f2.up.railway.app/'
 
   async function onSubmit(e) {
     e.preventDefault()

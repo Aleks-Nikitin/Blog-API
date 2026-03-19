@@ -10,11 +10,7 @@ npm run dev
 
 ## Env
 
-Create `.env`:
-
-```env
-VITE_API_BASE_URL=http://localhost:5000
-```
+Change your Api endpoint in API_BASE_URL
 
 ## Netlify
 
