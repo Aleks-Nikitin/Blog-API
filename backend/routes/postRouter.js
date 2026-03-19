@@ -3,7 +3,8 @@ import postController from '../controllers/postController.js';
 import authController from '../controllers/authController.js';
 const postRouter=Router();
 
-postRouter.get("/",authController.verifyToken,postController.getPublishedPosts);
+// Public: anyone can view published posts
+postRouter.get("/",postController.getPublishedPosts);
 postRouter.get("/:userId",postController.getPostsByAuthor)
 postRouter.put("/:postId",authController.verifyToken,postController.updatePost);
 postRouter.post("/",authController.verifyToken,postController.createPost);

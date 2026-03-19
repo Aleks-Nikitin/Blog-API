@@ -6,5 +6,5 @@ commentRouter.post("/:postId",authController.verifyToken,commentController.creat
 commentRouter.get("/users/:userId",commentController.getCommentsByUser)
 commentRouter.get("/:postId",commentController.getCommentsByPost)
 commentRouter.put("/:commentId",authController.verifyToken,commentController.updateComment)
-commentRouter.delete("/:commentId",authController.verifyToken,commentController.updateComment)
+commentRouter.delete("/:commentId",authController.verifyToken,commentController.deleteComment)
 export default commentRouter;

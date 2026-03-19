@@ -33,7 +33,10 @@ async function getCommentsByPost(req,res){
     const comments = await prisma.comment.findMany({
         where:{
             postId:Number(postId)
-        }
+        },
+        include: {
+            user: true,
+        },
     })
     res.json({comments:comments});
 }
