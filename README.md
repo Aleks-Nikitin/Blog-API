@@ -2,6 +2,9 @@
 
 Express + Prisma (Postgres) backend + a single React + Vite + Tailwind frontend (`frontend/App`).
 
+Live preview :
+https://blogapiproject.netlify.app
+
 Some API routes exist but aren’t wired into the UI yet.
 
 ## Run locally
@@ -32,12 +35,6 @@ node app.js
 ```bash
 cd frontend/App
 npm install
-```
-
-Create `frontend/App/.env`:
-
-```env
-VITE_API_BASE_URL=http://localhost:5000
 ```
 
 ```bash

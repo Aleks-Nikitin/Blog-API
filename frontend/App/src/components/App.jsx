@@ -7,7 +7,7 @@ function App() {
   const [postsArr, setPostsArr] = useState([])
   const [errorMsg, setErrorMsg] = useState(null)
 
-  const API_BASE_URL = 'https://blog-api-production-43f2.up.railway.app/'
+  const API_BASE_URL = 'https://blog-api-production-43f2.up.railway.app'
   useEffect(()=>{
       const dataFetch = async ()=>{
         setLoading(true)

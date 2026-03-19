@@ -1,5 +1,6 @@
 # Frontend (`frontend/App`)
-
+Live preview :
+https://blogapiproject.netlify.app
 ```bash
 npm install
 ```
@@ -16,4 +17,3 @@ Change your Api endpoint in API_BASE_URL
 
 - Build: `npm run build`
 - Publish: `dist`
-- Set env var `VITE_API_BASE_URL` to your deployed backend URL

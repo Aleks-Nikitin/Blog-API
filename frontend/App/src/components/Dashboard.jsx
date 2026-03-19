@@ -8,7 +8,7 @@ function Dashboard() {
   const [welcomeName, setWelcomeName] = useState(null)
   const [authReady, setAuthReady] = useState(false)
 
-  const API_BASE_URL = 'https://blog-api-production-43f2.up.railway.app/'
+  const API_BASE_URL = 'https://blog-api-production-43f2.up.railway.app'
 
   useEffect(() => {
     async function loadUser() {
